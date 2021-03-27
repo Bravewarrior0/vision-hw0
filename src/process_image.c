@@ -10,11 +10,11 @@ float get_pixel(image im, int x, int y, int c)
 {
     // we use clamp padding strategy
     if (x < 0) x = 0;
-    else if( x > im.w) x = im.w - 1;
+    else if( x >= im.w) x = im.w - 1;
     if (y < 0) y = 0;
-    else if( y > im.h) y = im.h - 1;
+    else if( y >= im.h) y = im.h - 1;
     if (c < 0) c = 0;
-    else if( c > im.c) c = im.c - 1;
+    else if( c >= im.c) c = im.c - 1;
 
     int idx = x + im.w*y + im.w*im.h*c;
     return im.data[idx];
